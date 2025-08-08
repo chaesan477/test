@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>flower1002</title>
+  <link rel="icon" href="1002 logo.JPG">
+  <!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Nanum Myeongjo', 'Lora', serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      height: 90px;
+      width: 100%;
+      background-color: white;
+      
+      
+      top: 0;
+      left: 0;
+      right: 80px;
+      z-index: 100;
+
+      position: fixed;
+      
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav-links {
+      margin-right: 100px;
+      display: flex;
+      gap: 70px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #555;
+    }
+
+    .menu-section {
+      background-color: #cbf1fc;
+      height: 2720px;
+      padding-top: 45px;
+      
+      text-align: center;
+    }
+
+    .MENU1 {
+      width: 100%;
+      height: 150px;
+      background-color: white ;
+      margin-top: -1px;
+      
+    }
+    .MENU {
+      font-size: 3.5em;
+      padding-top: 55px;
+      margin-bottom: 80px;
+    }
+
+    .manu1 {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    .beverage {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    
+   .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 항상 4개 */
+  gap: 55px;
+  padding: 0 50px 100px 50px;
+}
+
+
+
+
+    .menu-item {
+  width: 100%;
+  height: 400px; /* 1fr에 맞춰 자동 너비 */
+  aspect-ratio: 10 / 11; /* 고정된 비율 유지 (ex: 300x330 비율) */
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+
+   .menu-item img {
+  width: 80%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-radius: 10px;
+}
+
+
+    .menu-item > p {
+      margin-top: 80px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .text {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .menu-item:hover .overlay {
+      
+      opacity: 1;
+    }
+
+    .menu-item:hover .text {
+      
+      opacity: 1;
+    }
+
+    footer {
+      width: 100%;
+      height: 235px;
+      background-color: #06546b;
+      color: white;
+      padding: 50px 30px;
+    }
+    
+
+    footer p {
+      
+      font-size: 0.8em;
+      margin: 15px ;
+    }
+
+    .footer-logo img {
+      float: right;
+      width: 320px;
+      height: auto;
+      margin-top: -150px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="./index.html"><img src="1002 logo.JPG" alt="카페 로고"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="./flower menu.html">메뉴</a>
+      <a href="./flower introduce.html">카페소개</a>
+      <a href="./index.html">오시는 길</a>
+    </nav>
+  </header>
+
+  <section class="menu-section">
+    <div class="MENU1">
+      <h1 class="MENU">MENU</h1>
+    </div>
+    <h2 class="manu1">대표메뉴</h2>
+    <div class="menu-grid">
+    <div class="menu-item">
+      <img src="쌀 푸딩.png" alt="쌀 푸딩">
+      <p>쌀 푸딩</p>
+      <div class="overlay">
+        <p class="text">3,800원</p>
+      </div>
+    </div>
+
+  <div class="menu-item">
+      <img src="모카 피칸 파이.png" alt="모카 피칸 파이">
+      <p>모카 피칸 파이</p>
+      <div class="overlay">
+        <p class="text">3,500원</p>
+      </div>
+    </div>
+
+  <div class="menu-item">
+      <img src="바스크 치즈 케이크.png" alt="바스크 치즈 케이크">
+      <p>바스크 치즈 케이크</p>
+      <div class="overlay">
+        <p class="text">6,500원</p>
+      </div>
+    </div>
+
+  <div class="menu-item">
+      <img src="빵2.jpeg" alt="에그스콘" />
+    <p>에그스콘</p>
+      <div class="overlay">
+        <p class="text">2,800원</p>
+      </div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="휘낭시에.png" alt="휘낭시에" />
+    <p>휘낭시에</p>
+      <div class="overlay">
+        <p class="text">2,300원</p>
+      </div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="마카다미아 오렌지 파이.png" alt="마카다미아 오렌지파이" />
+    <p>마카다미아 오렌지파이</p>
+      <div class="overlay"><p class="text">3,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="사브레 한입쿠키.png" alt="사브레 한입쿠키" />
+      <p>사브레 한입쿠키</p>
+      <div class="overlay"><p class="text">2,000원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="플레인 스콘.png" alt="플레인 스콘" />
+    <p>플레인 스콘</p>
+      <div class="overlay"><p class="text">2,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="호두파이.png" alt="호두파이" />
+    <p>호두파이</p>
+      <div class="overlay"><p class="text">3,000원</p></div>
+    
+    
+  </div>
+</div>
+
+<div class="beverage">
+  <h2>음료</h2>
+</div>
+
+<div class="menu-grid">
+  <div class="menu-item">
+    
+      <img src="오레오 쉐이크.jpeg" alt="오레오 쉐이크" />
+    <p>오레오 쉐이크</p>
+      <div class="overlay"><p class="text">4,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="디카페인 더치 아메리카노.png" alt="디카페인 더치 아메리카노" />
+    <p>디카페인 더치 아메리카노</p>
+      <div class="overlay"><p class="text">4,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="딸기우유.png" alt="딸기우유" />
+    <p>딸기우유</p>
+      <div class="overlay"><p class="text">4,000원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="수제 청귤.png" alt="수제 청귤" />
+    <p>수제 청귤</p>
+      <div class="overlay"><p class="text">4,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="아몬드 아인슈페너.jpeg" alt="아몬드 아인슈페너" />
+    <p>아몬드 아인슈페너</p>
+      <div class="overlay"><p class="text">5,000원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="자몽.jpeg" alt="수제 자몽" />
+    <p>수제 자몽</p>
+      <div class="overlay"><p class="text">4,500원</p></div>
+    
+    
+  </div>
+
+  <div class="menu-item">
+    
+      <img src="카페라떼.png" alt="카페라떼" />
+    <p>카페라떼</p>
+      <div class="overlay"><p class="text">3,800원</p></div>
+    
+    
+  </div>
+</div>
+
+      
+      
+      
+      
+      </div>
+    </div>
+    
+  </section>
+
+  <footer>
+    <p>대표자 : 박천희</p>
+    <p>사업자등록번호 : 245-07-01445</p>
+    <p>전화번호 : 010-2024-6983</p>
+    <div class="footer-logo">
+      <img src="1002 icon.PNG" alt="카페 아이콘">
+    </div>
+  </footer>
+
+</body>
+</html>

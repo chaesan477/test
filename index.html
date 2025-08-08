@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>flower1002</title>
+  <link rel="icon" href="1002 logo.JPG">
+  <!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    
+body {
+  margin: 0;
+  font-family: 'Nanum Myeongjo', 'Lora', serif;
+}
+
+    
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      height: 90px;
+      width: 100%;
+      background-color: white;
+      
+      
+      top: 0;
+      left: 0;
+      right: 80px;
+      z-index: 100;
+
+      position: fixed;
+      
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav-links {
+      margin-right: 100px;
+      display: flex;
+      gap: 70px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #555;
+    }
+
+    
+
+    .main > img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .repre {
+      margin-top: -10px;
+      width: 100%;
+      height: 925px;
+      position: relative;
+      overflow: hidden;
+      
+      
+     
+    }
+
+    .repre > img {
+       width: 100%;
+      height: 100%;
+      
+    }
+
+    
+
+    .intro-box {
+      position: absolute;
+      top: 95px;
+      
+      right: 100px;
+      width: 730px;
+      height: 530px;
+      background-color: rgba(216, 220, 221, 0.8); /* 하늘색, 투명도 60% */
+      padding: 40px;
+      
+    }
+
+     .intro-box > p {
+      margin-top: 80px;
+      font-size: 1.2em;
+      margin-left: 50px;
+      
+    }
+
+    .manu-abc {
+      margin-top: -20px;
+      width: 100%;
+      height: 600px;
+      background-color: #e0edf1;
+    }
+
+    .menu-title {
+      
+      padding-top: 50px;
+      text-align: center;
+      font-size: 40px;
+      margin: 20px 0;
+      
+      
+      
+    }
+
+    
+
+    .slider-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      flex: 0 0 33%; /* 한 화면에 4개 보여줌 */
+      box-sizing: border-box;
+      padding: 40px;
+    }
+
+    .slide img {
+      width: 250px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        flex: 0 0 50%; /* 모바일에선 2개 보이게 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide {
+        flex: 0 0 100%; /* 작은 화면에서는 1개 */
+      }
+    }
+    
+    /* 페이지 내용이 헤더 아래로 내려가게 하기 위한 여백 */
+    
+    .location {
+      width: 100%;
+      height: 600px;
+      background-color: #cbf1fc;
+      margin-top:-65px ;
+      
+      
+    }
+    .map {
+      padding-top: 150px;
+      padding-left: 250px;
+      font-size: 4em;
+
+
+    }
+
+    .map1 {
+      margin-top: 10px;
+      padding-left: 250px;
+      font-size: 4em;
+    }
+
+   
+    .address {
+      margin-top: 100px;
+      font-size: 1.2em;
+      padding-top: 5px;
+      margin-left: 250px;
+      letter-spacing: 7px;
+    
+      
+    }
+
+    
+
+    
+
+    .daum_roughmap_loader_script {
+     margin-top: -380px;
+      margin-right: 200px;
+      float: right;
+      
+    }
+
+    .iconimg > img {
+      width: 200px;
+      height: auto;
+      margin-right: 50px;
+      float: right;
+      
+      
+      
+    }
+
+    .picture {
+      width: 100%;
+      height: 100%;
+    }
+
+    .collection {
+       margin-top: 100px;
+      
+      margin-bottom: 40px;
+      font-size: 70px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 35px;
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      width: 100%;
+      height: 235px;
+      background-color: #06546b;
+      color: white;
+      padding: 50px 30px;
+    }
+
+    footer p {
+      
+      font-size: 0.8em;
+      
+      margin: 15px ;
+    }
+
+    .footer-logo img {
+      float: right;
+      width: 320px;
+      height: auto;
+      margin-top: -150px;
+    }
+      
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="logo">
+      <a href="./index.html"><img src="1002 logo.JPG" alt="카페 로고"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="./flower menu.html">메뉴</a>
+      <a href="./flower introduce.html">카페소개</a>
+      <a href="#" onclick="scrollToLocation()">오시는 길</a>
+    </nav>
+  </header>
+  
+
+  <main class="main">
+    <img src="메인사진.jpg" alt="메인사진">
+  </main>
+
+  <div class="repre">
+    <img src="대표사진.jpg" alt="대표사진">
+
+    <div class="intro-box">
+      <p>
+        항상 소비자분들께 <br>
+        최선을 다하는 카페 플라워카페 1002 입니다.<br>
+        저희 플라워카페1002는 꽃과 식물이 있는 카페,<br>
+        음료와 디저트가 있는 꽃집입니다.<br>
+        17년 경력의 플로리스트, 모든 디저트를<br>
+        내 아이가 먹는다는 마음으로 직접 만드는<br>
+        사장님 부부가 함께 운영하고 있습니다.
+      </p>
+      <div class="iconimg">
+    <img src="1002 icon2.PNG" alt="1002">
+  </div>
+    </div>
+  </div>
+
+
+  <div class="manu-abc">
+  <div class="menu-title">MENU</div>
+
+  <div class="slider-container">
+    <button class="nav-button prev" onclick="prevSlide()">&#10094;</button>
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide"><img src="다양한.jpeg" alt="메뉴1"></div>
+      <div class="slide"><img src="초코.jpeg" alt="메뉴2"></div>
+      <div class="slide"><img src="빵.jpeg" alt="메뉴3"></div>
+      <div class="slide"><img src="아몬드 아인슈페너.jpeg"alt="메뉴4"></div>
+      <div class="slide"><img src="다양한1.jpeg" alt="메뉴5"></div>
+      <div class="slide"><img src="초코2.jpeg" alt="메뉴6"></div>
+      <div class="slide"><img src="마카다미아 오렌지 파이.png" alt="메뉴7"></div>
+      <div class="slide"><img src="오레오 쉐이크.jpeg" alt="메뉴8"></div>
+    </div>
+    <button class="nav-button next" onclick="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+
+<div class="location" id="location">
+  <div>
+    <p class="map">LOCATION </p>
+    <p class="map1">찾아오시는 길</p>
+    <div class="address1">
+    <p class="address" style="display: inline-block; background-color: white ;"> 주소 : 전남 순천시 석현동 214-1</p>
+    </div>
+    
+  </div>
+  
+  <div class="daum_roughmap_loader_script">
+    <iframe charset="UTF-8"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.4862045265154!2d127.48157147560198!3d34.969484322825394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356e0f3bbf27ad81%3A0x9981f7cb9ca6cf74!2z7ZSM65287JuM7Lm07Y6YMTAwMg!5e0!3m2!1sko!2skr!4v1753099348652!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+  </div>
+  
+</div>
+
+<div class="picture">
+  <div class="collection">
+    <div>#FLOWER CAFE 1002</div>
+    
+  </div>
+
+  <div class="gallery">
+    <img src="구운빵.jpeg" alt="menu1">
+    <img src="다양한.jpeg" alt="menu2">
+    <img src="꽃1.jpeg" alt="menu3">
+    <img src="빵.jpeg" alt="menu4">
+    <img src="바스크 치즈 케이크.png" alt="menu5">
+    <img src="꽃2.jpeg" alt="menu6">
+    <img src="초코2.jpeg" alt="menu7">
+    <img src="쿠키.jpeg" alt="menu8">
+    <img src="오레오.jpeg" alt="menu9">
+    <img src="초코.jpeg" alt="menu10">
+    <img src="자몽.jpeg" alt="menu11">
+    <img src="꽃3.jpeg" alt="menu12">
+  </div>
+
+</div>
+
+<footer>
+    <p>대표자 : 박천희</p>
+    <p>사업자등록번호 : 245-07-01445</p>
+    <p>전화번호 : 010-2024-6983</p>
+    <div class="footer-logo">
+      <img src="1002 icon.PNG" alt="카페 아이콘">
+    </div>
+  </footer>
+
+
+<script>
+  function scrollToLocation() {
+    const locationSection = document.getElementById("location");
+    locationSection.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const track = document.getElementById('sliderTrack');
+  const slides = document.querySelectorAll('.slide');
+  const visibleSlides = 4;
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    if (currentIndex < totalSlides - visibleSlides) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = totalSlides - visibleSlides;
+    }
+    updateSlidePosition();
+  }
+
+  // 자동 슬라이드 (3초마다)
+  setInterval(nextSlide, 3000);
+
+  // 반응형 대응
+  window.addEventListener('resize', updateSlidePosition);
+</script>
+
+
+</body>
+</html>
